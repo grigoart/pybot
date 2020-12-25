@@ -73,7 +73,6 @@ ___3. Send commands to bots:___
 _select a bot:_
 ```
 [None]: select 198a0a574b6b3e0c6a89753a853c4e6d
-[198a0a574b6b3e0c6a89753a853c4e6d]: select b569e438c685b70458e51907b40e51e5
 [b569e438c685b70458e51907b40e51e5]: Selected b569e438c685b70458e51907b40e51e5
 ```
 
