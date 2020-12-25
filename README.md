@@ -166,8 +166,8 @@ drwxr-xr-x 3 username username 4096 Dec 25 14:02 ..
 ## Additional info:
 
 * registered bot is represented as a gist with description "bot"
-* command is represented as a gist-file in the gist
-* result of the command is represented as a content of the file
+* command is represented as a gist-file
+* result of the command is represented as a content of the gist-file
 * file transfer implementation:
   * bot master creates a gist with description "data"
   * this data gist contains a single gist-file "data"
