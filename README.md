@@ -82,7 +82,7 @@ _info:_
 [b569e438c685b70458e51907b40e51e5]: ['Linux-4.12.0-1-amd64-x86_64-with-debian-10.5', 'hacker', ['192.168.8.21', '172.16.1.21']]
 ```
 
-_send a commands:_
+_send some commands:_
 ```
 [b569e438c685b70458e51907b40e51e5]: cm ls /
 [b569e438c685b70458e51907b40e51e5]: Sent command id: gASVDgAAAAAAAABdlCiMAmxzlIwBL5RlLg==
