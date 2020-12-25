@@ -15,12 +15,6 @@ python3+
 * `<bot_id>` - id of the preregistered bot (if none provided, it will be registered)
 * `<init_datetime>` - init time to fetch commands (format '%Y-%m-%dT%H:%M:%SZ', default = '1900-01-01T00:00:00Z')
 
-#### Example
-
-```
-python bot.py 349ab29asxtabw423bva5hca5623bc39b8c8
-```
-
 ### Bot master
 
 #### Usage
@@ -44,12 +38,6 @@ python bot.py 349ab29asxtabw423bva5hca5623bc39b8c8
 * `last` - print the result of the last executed command (of current bot)
 * `help` - for help
 * `exit` - to exit
-
-#### Example
-
-```
-python bot_master.py 349ab29asxtabw423bva5hca5623bc39b8c8
-```
 
 ## Example
 
