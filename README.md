@@ -163,3 +163,14 @@ drwxr-xr-x 3 username username 4096 Dec 25 14:02 ..
 -rw-r--r-- 1 username username 1532 Dec 25 13:36 gist.py
 -rw-r--r-- 1 username username 1572 Dec 25 13:36 util.py
 ```
+
+## Additional info:
+
+* registered bot is represented as a gist with description "bot"
+* command is represented as a gist-file in the gist
+* result of the command is represented as a content of the file
+* file transfer implementation:
+  * bot master creates a gist with description "data"
+  * this data gist contains a single gist-file "data"
+  * this data gist-file contains a base64 encoded content of the choosen file
+  * bot decodes the gist-file content and saves to a target file
