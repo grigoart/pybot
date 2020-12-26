@@ -1,6 +1,7 @@
 ## Prerequisites
 
-python3+
+python3+ with external modules:
+* [requests](https://pypi.org/project/requests/)
 
 ## Usage
 
