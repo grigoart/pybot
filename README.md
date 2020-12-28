@@ -36,7 +36,7 @@ python3+ with external modules:
 * `history` - print a command history (of selected bot)
 * `result <command_id>` - print the result of a command (of current bot)
 * `info` - print info about environment (of current bot)
-* `last` - print the result of the last executed command (of current bot)
+* `last` - print the result of the last executed command
 * `help` - for help
 * `exit` - to exit
 
