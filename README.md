@@ -1,3 +1,7 @@
+## Description
+
+A python implementation of a botnet, consisting of bot and controller (bot master). The internal communication is done through [GithubGist](https://gist.github.com/discover) using gists. The bot master can send commands to the different bots and receive their responses.
+
 ## Prerequisites
 
 python3+ with external modules:
