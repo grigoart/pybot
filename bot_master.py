@@ -90,6 +90,8 @@ class BotMaster:
                 if not sp:
                     continue
                 if sp[0] == 'select':
+                    if len(sp) < 2:
+                        print_o('Invalid syntax. Use help')
                     self.select_bot(sp[1])
                     print_o('Selected ' + self.selected_bot_id)
                 elif sp[0] == 'bots':
@@ -124,6 +126,8 @@ class BotMaster:
                 elif sp[0] == 'exit':
                     return
                 elif sp[0] == 'send':
+                    if len(sp) < 3:
+                        print_o('Invalid syntax. Use help')
                     data = encode_command(read_file(sp[1]))
                     print_o("Uploading file content " + sp[1])
                     result = self.api.create({'data': {'content': data}}, 'data')

