@@ -28,7 +28,7 @@ python3+ with external modules:
 
 * `<gist_api_token>` - token for the gist api
 
-#### Interactive usage
+#### Interactive usage (cli)
 
 * `bots` - list all bots
 * `select <bot_id>` - select a bot
