@@ -59,7 +59,7 @@ username@hostname:~/$ python3 bot.py 349ab29asxtabw423bva5hca5623bc39b8c8
 
 _Bot #2:_
 ```
-C:\app>python bot_master.py 349ab29asxtabw423bva5hca5623bc39b8c8
+C:\app>python bot.py 349ab29asxtabw423bva5hca5623bc39b8c8
 25/12/2020 15:06:29 [INFO] Registering the bot...
 25/12/2020 15:06:30 [INFO] Successfully registered. Bot id = 198a0a574b6b3e0c6a89753a853c4e6d
 25/12/2020 15:06:30 [INFO] Fetching new commands...
