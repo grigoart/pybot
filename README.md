@@ -1,6 +1,6 @@
 ## Description
 
-A python implementation of a botnet, consisting of bot and controller (bot master). The internal communication is done through [GithubGist](https://gist.github.com/discover) using gists. The bot master can send commands to the different bots and receive their responses.
+Implementation of a botnet in Python, which consists of a bot and a controller (bot master). Internal communication is done via [GithubGist](https://gist.github.com/discover) using gists. The bot master can send commands to different bots and receive their responses.
 
 ## Prerequisites
 
@@ -17,7 +17,7 @@ python3+ with external modules:
 
 * `<gist_api_token>` - token for the gist api
 * `<command_fetch_interval[s]>` - command fetch interval (in seconds, default = 1)
-* `<bot_id>` - id of the preregistered bot (if none provided, it will be registered)
+* `<bot_id>` - id of the pre-registered bot (if none provided, it will be registered)
 * `<init_datetime>` - init time to fetch commands (format '%Y-%m-%dT%H:%M:%SZ', default = '1900-01-01T00:00:00Z')
 
 ### Bot master
@@ -66,7 +66,7 @@ C:\app>python bot.py 349ab29asxtabw423bva5hca5623bc39b8c8
 25/12/2020 15:06:30 [INFO] Fetched 0 new commands.
 ```
 
-___2. Run bot master and check the list of registered bots:___
+___2. Run the bot master and check the list of registered bots:___
 ```
 username@hostname:~/$ python3 bot_master.py 349ab29asxtabw423bva5hca5623bc39b8c8
 [None]: bots
